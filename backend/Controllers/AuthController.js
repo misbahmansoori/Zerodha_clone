@@ -19,10 +19,10 @@ module.exports.Signup = async (req, res) => {
     const token = createSecretToken(user._id);
 
     res.cookie("token", token, {
-      httpOnly: true,
-      secure: true,
-      sameSite: "none",
-    });
+  httpOnly: true,
+  secure: true,
+  sameSite: "none",
+});
 
     return res.status(201).json({
       success: true,
@@ -69,16 +69,13 @@ module.exports.Login = async (req, res) => {
       });
     }
 
-    // ✅ THIS WAS MISSING
-    const token = createSecretToken(user._id);
-
-    // ✅ NOW cookie will actually be set
     res.cookie("token", token, {
-      httpOnly: true,
-      secure: true,
-      sameSite: "none",
-    });
+  httpOnly: true,
+  secure: true,
+  sameSite: "none",
+});
 
+    // ✅ SEND USER BACK (IMPORTANT)
     return res.status(200).json({
       success: true,
       message: "User logged in successfully",
