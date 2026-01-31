@@ -4,6 +4,8 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
+const jwt = require("jsonwebtoken");
+const User = require("./models/UserModel");
 
 const authRoute = require("./Routes/AuthRoute");
 const { HoldingsModel } = require("./models/HoldingsModel");
@@ -51,10 +53,14 @@ app.get("/me", (req, res) => {
   if (!token) return res.status(401).json({ user: null });
 
   const decoded = jwt.verify(token, process.env.TOKEN_KEY);
-  User.findById(decoded.id).select("-password").then(user => {
-    res.json({ user });
-  });
+
+  User.findById(decoded.id)
+    .select("-password")
+    .then(user => {
+      res.json({ user });
+    });
 });
+
 
 app.post("/logout", (req, res) => {
   res.clearCookie("token");
