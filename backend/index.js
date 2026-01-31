@@ -27,8 +27,9 @@ app.use(
       "https://zerodha-clone-dusky-beta.vercel.app",
     ],
     credentials: true,
-  }),
+  })
 );
+
 
 // ✅ Routes BEFORE listen
 app.use("/", authRoute);
@@ -50,18 +51,18 @@ app.post("/newOrder", async (req, res) => {
   res.send("Order saved!");
 });
 
-app.get("/me", (req, res) => {
-  const token = req.cookies.token;
-  if (!token) return res.status(401).json({ user: null });
+// app.get("/me", (req, res) => {
+//   const token = req.cookies.token;
+//   if (!token) return res.status(401).json({ user: null });
 
-  const decoded = jwt.verify(token, process.env.TOKEN_KEY);
+//   const decoded = jwt.verify(token, process.env.TOKEN_KEY);
 
-  User.findById(decoded.id)
-    .select("-password")
-    .then((user) => {
-      res.json({ user });
-    });
-});
+//   User.findById(decoded.id)
+//     .select("-password")
+//     .then((user) => {
+//       res.json({ user });
+//     });
+// });
 
 app.post("/logout", (req, res) => {
   res.clearCookie("token");

@@ -19,10 +19,9 @@ module.exports.Signup = async (req, res) => {
     const token = createSecretToken(user._id);
 
     res.cookie("token", token, {
-  httpOnly: true,
-  secure: true,
-  sameSite: "none",
-});
+      httpOnly: true,
+      sameSite: "lax",
+    });
 
     return res.status(201).json({
       success: true,
@@ -69,13 +68,14 @@ module.exports.Login = async (req, res) => {
       });
     }
 
-    res.cookie("token", token, {
-  httpOnly: true,
-  secure: true,
-  sameSite: "none",
-});
+    // ✅ THIS LINE WAS MISSING (AGAIN)
+    const token = createSecretToken(user._id);
 
-    // ✅ SEND USER BACK (IMPORTANT)
+    res.cookie("token", token, {
+      httpOnly: true,
+      sameSite: "lax",
+    });
+
     return res.status(200).json({
       success: true,
       message: "User logged in successfully",
