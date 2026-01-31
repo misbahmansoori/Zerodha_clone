@@ -1,0 +1,666 @@
+
+
+/* ===================== ROOT VARIABLES ===================== */
+:root {
+  --bg-main: #ffffff;
+  --bg-soft: #fafafa;
+
+  --text-primary: #2c2c2c;
+  --text-muted: #8a8a8a;
+
+  --border-light: #ececec;
+
+  --blue: #4184f3;
+  --green: #4caf50;
+  --red: #ff5722;
+
+  --radius: 6px;
+  --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* ===================== GLOBAL ===================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  background: var(--bg-soft);
+  color: var(--text-primary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===================== TOP BAR ===================== */
+.topbar-container {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  background: var(--bg-main);
+  box-shadow: var(--shadow-soft);
+
+  /* 🔒 CRITICAL FIX */
+  position: relative;
+  z-index: 1000;
+}
+
+.indices-container {
+  flex-basis: 32%;
+  display: flex;
+  justify-content: space-around;
+  border-right: 1px solid var(--border-light);
+}
+
+.index {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.index-points {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--red);
+}
+/* ===================== MENU LOGO ===================== */
+.menu-logo {
+  width: 40px;
+  margin-right: 40px;
+}
+
+/* ===================== PROFILE DROPDOWN ===================== */
+.dropdown {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: 8px 0;
+  min-width: 120px;
+  z-index: 2000;
+}
+
+.dropdown p {
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.dropdown p:hover {
+  background: var(--bg-soft);
+}
+
+/* ===================== MENU ===================== */
+
+
+.menu-container {
+  flex-basis: 68%;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 32px;          /* controls spacing after logo */
+  position: relative;
+  z-index: 1001;
+}
+.menus {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.menus ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.menus li {
+  margin-right: 28px;
+}
+
+.menu {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.menu.selected,
+.menu:hover {
+  color: var(--red);
+}
+
+/* ===================== MENU HEADER ===================== */
+.menu-header {
+  display: flex;
+  align-items: center;
+  gap:32px;
+  width: auto;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ===================== AUTH BUTTONS ===================== */
+.auth-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.auth-buttons a {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.menus hr {
+  display: none;
+}
+
+
+.auth-buttons a:hover {
+  color: var(--red);
+}
+
+
+/* ===================== PROFILE ===================== */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  background: #fde7fd;
+  color: #b14fb1;
+  font-size: 0.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===================== DASHBOARD ===================== */
+.dashboard-container {
+  display: flex;
+  height: calc(100vh - 10vh);
+}
+
+.watchlist-container {
+  flex-basis: 32%;
+  background: var(--bg-main);
+  box-shadow: var(--shadow-soft);
+  overflow-y: auto;
+}
+
+.content {
+  flex-basis: 68%;
+  padding: 32px;
+  overflow-y: auto;
+}
+
+/* ===================== WATCHLIST ===================== */
+.search {
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.85rem;
+}
+
+.search:focus {
+  outline: none;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.list li {
+  padding: 14px;
+  border-bottom: 1px solid var(--border-light);
+  position: relative;
+  transition: background 0.15s ease;
+}
+
+.list li:hover {
+  background: #f4f6f8;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.up {
+  color: var(--green);
+}
+
+.down {
+  color: var(--red);
+}
+
+/* ===================== WATCHLIST ACTIONS (FIXED) ===================== */
+.actions {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+
+  /* 🔒 MOST IMPORTANT FIX */
+  pointer-events: none;
+}
+
+.list li:hover .actions {
+  display: flex;
+}
+
+.actions button {
+  margin-left: 8px;
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  border: none;
+
+  /* allow clicks ONLY on buttons */
+  pointer-events: auto;
+}
+
+.buy {
+  background: var(--blue);
+  color: #fff;
+}
+
+.sell {
+  background: var(--red);
+  color: #fff;
+}
+
+.action {
+  background: #fff;
+  border: 1px solid var(--border-light);
+}
+
+/* ===================== BUTTONS ===================== */
+.btn {
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-blue {
+  background: var(--blue);
+}
+
+.btn-green {
+  background: var(--green);
+}
+
+.btn-blue:hover {
+  background: #5a94f5;
+}
+
+.btn-green:hover {
+  background: #6acb6f;
+}
+
+/* ===================== TABLES ===================== */
+.title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.order-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-main);
+}
+
+.order-table th {
+  padding: 14px 10px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: right;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.order-table td {
+  padding: 12px 10px;
+  font-size: 0.85rem;
+  text-align: right;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.order-table tr:hover {
+  background: var(--bg-soft);
+}
+
+.order-table th:first-child,
+.order-table td:first-child {
+  text-align: left;
+}
+
+.profit {
+  color: var(--green);
+}
+
+.loss {
+  color: var(--red);
+}
+
+/* ===================== SUMMARY ===================== */
+.username h6 {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border-light);
+  border: none;
+  margin: 24px 0;
+}
+
+.section span p {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.data {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.data .first h3 {
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+.data .second p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ===================== FUNDS ===================== */
+.funds {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.col {
+  flex: 1;
+}
+/* ===================== AUTH PAGES ===================== */
+.form_container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-soft);
+}
+
+.form_container h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+}
+
+.form_container form {
+  width: 360px;
+  background: var(--bg-main);
+  padding: 32px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form_container label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form_container input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 0.85rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-light);
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.form_container input:focus {
+  border-color: var(--blue);
+}
+
+.form_container button {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  background: var(--blue);
+  color: #fff;
+  transition: background 0.2s ease;
+}
+
+.form_container button:hover {
+  background: #5a94f5;
+}
+
+.form_container span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.form_container span a {
+  margin-left: 6px;
+  color: var(--blue);
+  font-weight: 500;
+}
+
+.form_container span a:hover {
+  text-decoration: underline;
+}
+
+/* ===================== HOME (AFTER LOGIN) ===================== */
+.home_page {
+  min-height: 100vh;
+  background: var(--bg-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home_page h4 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.home_page h4 span {
+  color: var(--blue);
+}
+
+.home_page button {
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  border: none;
+  background: var(--red);
+  color: #fff;
+  cursor: pointer;
+}
+
+.home_page button:hover {
+  background: #ff6f45;
+}
+/* ===================== RESPONSIVE (MOBILE) ===================== */
+@media (max-width: 768px) {
+
+  /* ===================== TOP BAR ===================== */
+  .topbar-container {
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .indices-container {
+    width: 100%;
+    justify-content: space-around;
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+    padding: 8px 0;
+  }
+
+  /* ===================== MENU ===================== */
+  .menu-container {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 16px;
+  }
+
+  .menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-logo {
+    margin: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 1.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* dropdown menu */
+  .menus {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: var(--bg-main);
+    border-top: 1px solid var(--border-light);
+    padding: 12px 0;
+  }
+
+  .menus.open {
+    display: flex;
+  }
+
+  .menus ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 16px;
+  }
+
+  .menus li {
+    margin: 0;
+  }
+
+  .auth-buttons,
+  .profile {
+    padding: 0 16px;
+    margin-top: 12px;
+  }
+
+  .dropdown {
+    left: 0;
+    right: auto;
+  }
+
+  /* ===================== DASHBOARD LAYOUT ===================== */
+  .dashboard-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .watchlist-container {
+    width: 100%;
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+
+  .content {
+    width: 100%;
+    padding: 16px;
+  }
+
+  /* ===================== TABLES ===================== */
+  .order-table {
+    overflow-x: auto;
+  }
+
+  .order-table table {
+    min-width: 600px;
+  }
+
+  /* ===================== DATA ===================== */
+  .data {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  /* ===================== FUNDS ===================== */
+  .funds {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+

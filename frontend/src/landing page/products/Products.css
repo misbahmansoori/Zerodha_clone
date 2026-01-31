@@ -1,0 +1,14 @@
+/* Prevent accidental horizontal scroll */
+body {
+  overflow-x: hidden;
+}
+
+.product-image {
+  max-width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+}
+
+.store-badge {
+  height: 42px;
+}

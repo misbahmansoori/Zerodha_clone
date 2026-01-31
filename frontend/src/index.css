@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.nav-link{
+  margin-left: 40px;
+}
+
+#supportHero{
+  background-color: rgb(56, 126, 209);
+  color: white;
+}
+
+#supportHero a{
+  color: white;
+}
+
+#supportWrapper{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 150px;
+}
+
+#supportHero input{
+  padding: 20px 50px;
+  width: 100%;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+}
+
+.ticket-links a,
+.support-links a,
+.featured-list a {
+  display: block;
+  margin-bottom: 6px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ticket-links a:hover,
+.support-links a:hover,
+.featured-list a:hover {
+  text-decoration: underline;
+}
+footer a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
