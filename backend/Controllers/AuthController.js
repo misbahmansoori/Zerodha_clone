@@ -20,7 +20,8 @@ module.exports.Signup = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      withCredentials: true,
+      secure: true,
+      sameSite: "none",
     });
 
     return res.status(201).json({
@@ -68,10 +69,10 @@ module.exports.Login = async (req, res) => {
       });
     }
 
-    const token = createSecretToken(user._id);
     res.cookie("token", token, {
       httpOnly: true,
-      withCredentials: true,
+      secure: true,
+      sameSite: "none",
     });
 
     // ✅ SEND USER BACK (IMPORTANT)
