@@ -69,13 +69,16 @@ module.exports.Login = async (req, res) => {
       });
     }
 
+    // ✅ THIS WAS MISSING
+    const token = createSecretToken(user._id);
+
+    // ✅ NOW cookie will actually be set
     res.cookie("token", token, {
       httpOnly: true,
       secure: true,
       sameSite: "none",
     });
 
-    // ✅ SEND USER BACK (IMPORTANT)
     return res.status(200).json({
       success: true,
       message: "User logged in successfully",
