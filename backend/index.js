@@ -22,10 +22,12 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    origin: [
+      "http://localhost:3000",
+      "https://zerodha-clone-dusky-beta.vercel.app",
+    ],
     credentials: true,
-  })
+  }),
 );
 
 // ✅ Routes BEFORE listen
@@ -56,17 +58,15 @@ app.get("/me", (req, res) => {
 
   User.findById(decoded.id)
     .select("-password")
-    .then(user => {
+    .then((user) => {
       res.json({ user });
     });
 });
-
 
 app.post("/logout", (req, res) => {
   res.clearCookie("token");
   res.json({ success: true });
 });
-
 
 // ✅ Start server LAST
 app.listen(PORT, async () => {
