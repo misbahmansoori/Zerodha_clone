@@ -1,20 +1,25 @@
 const User = require("../models/UserModel");
-require("dotenv").config();
 const jwt = require("jsonwebtoken");
 
-module.exports.userVerification = (req, res) => {
-  const token = req.cookies.token;
-  if (!token) {
-    return res.json({ status: false });
-  }
+module.exports.userVerification = async (req, res) => {
+  try {
+    const token = req.cookies.token;
 
-  jwt.verify(token, process.env.TOKEN_KEY, async (err, data) => {
-    if (err) {
-      return res.json({ status: false });
-    } else {
-      const user = await User.findById(data.id);
-      if (user) return res.json({ status: true, user: user.username });
-      else return res.json({ status: false });
+    if (!token) {
+      return res.status(401).json({ user: null });
     }
-  });
+
+    const decoded = jwt.verify(token, process.env.TOKEN_KEY);
+
+    const user = await User.findById(decoded.id).select("-password");
+
+    if (!user) {
+      return res.status(401).json({ user: null });
+    }
+
+    // ✅ IMPORTANT: return FULL user object
+    return res.json({ user });
+  } catch (error) {
+    return res.status(401).json({ user: null });
+  }
 };
