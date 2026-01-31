@@ -10,7 +10,7 @@ const BuyActionWindow = ({ uid }) => {
   const [stockPrice, setStockPrice] = useState(0.0);
 
   const handleBuyClick = async () => {
-    await axios.post("http://localhost:3002/newOrder", {
+    await axios.post("https://zerodha-backend-sjvj.onrender.com/newOrder", {
       name: uid,
       qty: stockQuantity,
       price: stockPrice,
@@ -29,7 +29,9 @@ const BuyActionWindow = ({ uid }) => {
       <div className="buy-modal">
         <div className="buy-header">
           <h3>Buy {uid}</h3>
-          <span className="close" onClick={closeBuyWindow}>×</span>
+          <span className="close" onClick={closeBuyWindow}>
+            ×
+          </span>
         </div>
 
         <div className="buy-body">

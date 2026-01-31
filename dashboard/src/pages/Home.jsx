@@ -14,10 +14,11 @@ const Home = () => {
         navigate("/login");
       }
       const { data } = await axios.post(
-        "http://localhost:4000",
+        "https://zerodha-backend-sjvj.onrender.com/me",
         {},
-        { withCredentials: true }
+        { withCredentials: true },
       );
+
       const { status, user } = data;
       setUsername(user);
       return status

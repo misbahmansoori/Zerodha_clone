@@ -13,10 +13,11 @@ const Menu = () => {
 
   const handleLogout = async () => {
     await axios.post(
-      "http://localhost:3002/logout",
+      "https://zerodha-backend-sjvj.onrender.com/logout",
       {},
-      { withCredentials: true }
+      { withCredentials: true },
     );
+
     setUser(null);
     navigate("/login");
   };
@@ -27,11 +28,7 @@ const Menu = () => {
     <div className="menu-container">
       {/* HEADER (logo + hamburger) */}
       <div className="menu-header">
-        <img
-          src="/media/kite-logo.svg"
-          alt="logo"
-          className="menu-logo"
-        />
+        <img src="/media/kite-logo.svg" alt="logo" className="menu-logo" />
 
         <button
           className="menu-toggle"
@@ -54,12 +51,16 @@ const Menu = () => {
                     setIsMobileMenuOpen(false);
                   }}
                 >
-                  <p className={selectedMenu === index ? "menu selected" : "menu"}>
+                  <p
+                    className={
+                      selectedMenu === index ? "menu selected" : "menu"
+                    }
+                  >
                     {item}
                   </p>
                 </Link>
               </li>
-            )
+            ),
           )}
         </ul>
 

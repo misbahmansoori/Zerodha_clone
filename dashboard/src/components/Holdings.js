@@ -7,10 +7,12 @@ const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3002/allHoldings").then((res) => {
-      console.log(res.data);
-      setAllHoldings(res.data);
-    });
+    axios
+      .get("https://zerodha-backend-sjvj.onrender.com/allHoldings")
+      .then((res) => {
+        console.log(res.data);
+        setAllHoldings(res.data);
+      });
   }, []);
   const labels = allHoldings.map((subArray) => subArray["name"]);
 
@@ -53,7 +55,7 @@ const Holdings = () => {
                 <td>{stock.avg.toFixed(2)}</td>
                 <td>{stock.price.toFixed(2)}</td>
                 <td>{curValue.toFixed(2)}</td>
-                <td className="{profClass">
+                <td className={profClass}>
                   {(curValue - stock.avg * stock.qty).toFixed(2)}
                 </td>
                 <td className={profClass}>{stock.net}</td>

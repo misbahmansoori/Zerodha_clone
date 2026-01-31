@@ -10,9 +10,11 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await axios.get("http://localhost:3002/me", {
-          withCredentials: true,
-        });
+        const res = await axios.get(
+          "https://zerodha-backend-sjvj.onrender.com/me",
+          { withCredentials: true },
+        );
+
         setUser(res.data.user);
       } catch (err) {
         setUser(null);
