@@ -20,7 +20,8 @@ module.exports.Signup = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      sameSite: "lax",
+      secure: true, // ✅ REQUIRED on HTTPS
+      sameSite: "none", // ✅ REQUIRED for cross-domain
     });
 
     return res.status(201).json({
@@ -73,7 +74,8 @@ module.exports.Login = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      sameSite: "lax",
+      secure: true, // ✅ REQUIRED on HTTPS
+      sameSite: "none", // ✅ REQUIRED for cross-domain
     });
 
     return res.status(200).json({
