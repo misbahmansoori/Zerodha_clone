@@ -26,13 +26,14 @@ app.use(
       "http://localhost:3000",
       "https://zerodha-clone-dusky-beta.vercel.app",
     ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
-  })
+  }),
 );
-
 
 // ✅ Routes BEFORE listen
 app.use("/", authRoute);
+
 
 // ---- Other APIs ----
 app.get("/allHoldings", async (req, res) => {

@@ -2,48 +2,30 @@ const User = require("../models/UserModel");
 const { createSecretToken } = require("../util/SecretToken");
 const bcrypt = require("bcryptjs");
 
-module.exports.Signup = async (req, res) => {
+module.exports.Signup = async (req, res, next) => {
   try {
-    const { email, password, username } = req.body;
-
+    const { email, password, username, createdAt } = req.body;
     const existingUser = await User.findOne({ email });
     if (existingUser) {
-      return res.status(400).json({
-        success: false,
-        message: "User already exists",
-      });
+      return res.json({ message: "User already exists" });
     }
-
-    const user = await User.create({ email, password, username });
-
+    const user = await User.create({ email, password, username, createdAt });
     const token = createSecretToken(user._id);
-
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true, // ✅ REQUIRED on HTTPS
-      sameSite: "none", // ✅ REQUIRED for cross-domain
+      secure: true,
+      sameSite: "none",
     });
 
     return res.status(201).json({
-      success: true,
       message: "User signed up successfully",
-      user: {
-        _id: user._id,
-        username: user.username,
-        email: user.email,
-      },
+      success: true,
+      user,
     });
   } catch (error) {
     console.error(error);
-    handleError(error.response?.data?.message || "Login failed. Try again.");
-
-    return res.status(500).json({
-      success: false,
-      message: "Internal server error",
-    });
   }
 };
-
 module.exports.Login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -71,13 +53,12 @@ module.exports.Login = async (req, res) => {
       });
     }
 
-    // ✅ THIS LINE WAS MISSING (AGAIN)
     const token = createSecretToken(user._id);
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true, // ✅ REQUIRED on HTTPS
-      sameSite: "none", // ✅ REQUIRED for cross-domain
+      secure: true,
+      sameSite: "none",
     });
 
     return res.status(200).json({
@@ -91,8 +72,6 @@ module.exports.Login = async (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    handleError(error.response?.data?.message || "Login failed. Try again.");
-
     return res.status(500).json({
       success: false,
       message: "Internal server error",
