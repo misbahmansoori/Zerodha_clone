@@ -35,6 +35,8 @@ module.exports.Signup = async (req, res) => {
     });
   } catch (error) {
     console.error(error);
+    handleError(error.response?.data?.message || "Login failed. Try again.");
+
     return res.status(500).json({
       success: false,
       message: "Internal server error",
@@ -89,6 +91,8 @@ module.exports.Login = async (req, res) => {
     });
   } catch (error) {
     console.error(error);
+    handleError(error.response?.data?.message || "Login failed. Try again.");
+
     return res.status(500).json({
       success: false,
       message: "Internal server error",
