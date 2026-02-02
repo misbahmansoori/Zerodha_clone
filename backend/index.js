@@ -34,6 +34,10 @@ app.use(
 // ✅ Routes BEFORE listen
 app.use("/", authRoute);
 
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
+
 
 // ---- Other APIs ----
 app.get("/allHoldings", async (req, res) => {
