@@ -43,7 +43,7 @@ function Footer() {
           <div className="col-12 col-sm-6 col-md-3 mb-4 text-center text-md-start">
             <p className="fw-semibold">Account</p>
             <a
-              href="http://localhost:3000/signup"
+              href="https://zerodha-clone-dusky-beta.vercel.app/signup"
               target="_blank"
               rel="noopener noreferrer"
             >

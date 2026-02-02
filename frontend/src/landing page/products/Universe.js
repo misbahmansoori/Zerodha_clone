@@ -17,14 +17,12 @@ function Universe() {
               className="img-fluid mb-2"
               style={{ maxWidth: "140px" }}
             />
-            <p className="text-muted small">
-              Thematic investment platform
-            </p>
+            <p className="text-muted small">Thematic investment platform</p>
           </div>
         ))}
 
         <a
-          href="http://localhost:3000/signup"
+          href="https://zerodha-clone-dusky-beta.vercel.app/signup"
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-primary fs-5 mt-4"

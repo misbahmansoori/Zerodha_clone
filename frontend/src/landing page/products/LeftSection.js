@@ -20,7 +20,7 @@ function LeftSection({ imageURL, productName, productDesription }) {
 
           <div className="d-flex flex-wrap gap-3 mb-3">
             <a
-              href="http://localhost:3000"
+              href="https://zerodha-clone-dusky-beta.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -12,7 +12,7 @@ function OpenAccount() {
         </p>
 
         <a
-          href="http://localhost:3000/signup"
+          href="https://zerodha-clone-dusky-beta.vercel.app/signup"
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-primary fs-5 mt-3"

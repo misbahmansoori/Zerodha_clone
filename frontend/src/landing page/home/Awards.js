@@ -51,7 +51,7 @@ function Awards() {
             </a>
 
             <a
-              href="http://localhost:3000"
+              href="https://zerodha-clone-dusky-beta.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               style={{ textDecoration: "none", fontWeight: 500 }}

@@ -12,9 +12,7 @@ function Hero() {
         />
 
         {/* Heading */}
-        <h1 className="mt-3 mt-md-4">
-          Invest in everything
-        </h1>
+        <h1 className="mt-3 mt-md-4">Invest in everything</h1>
 
         {/* Subtitle */}
         <p className="px-2 px-md-0">
@@ -24,7 +22,7 @@ function Hero() {
 
         {/* CTA */}
         <a
-          href="http://localhost:3000/signup"
+          href="https://zerodha-clone-dusky-beta.vercel.app/signup"
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-primary fs-5 mt-3"

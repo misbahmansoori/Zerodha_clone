@@ -57,7 +57,7 @@ const Navbar = () => {
             {/* Desktop CTA */}
             <li className="nav-item d-none d-lg-block ms-lg-2">
               <a
-                href="http://localhost:3000/signup"
+                href="https://zerodha-clone-dusky-beta.vercel.app/signup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary btn-sm"
@@ -69,7 +69,7 @@ const Navbar = () => {
             {/* Mobile CTA */}
             <li className="nav-item d-lg-none mt-3">
               <a
-                href="http://localhost:3000/signup"
+                href="https://zerodha-clone-dusky-beta.vercel.app/signup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary w-100"
