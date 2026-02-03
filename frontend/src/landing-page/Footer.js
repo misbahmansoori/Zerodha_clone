@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../index.css";
 
 function Footer() {
@@ -22,21 +23,21 @@ function Footer() {
           {/* Company */}
           <div className="col-12 col-sm-6 col-md-3 mb-4 text-center text-md-start">
             <p className="fw-semibold">Company</p>
-            <a href="/about">About</a>
+            <Link to="/about">About</Link>
             <br />
-            <a href="/product">Products</a>
+            <Link to="/product">Products</Link>
             <br />
-            <a href="/pricing">Pricing</a>
+            <Link to="/pricing">Pricing</Link>
           </div>
 
           {/* Support */}
           <div className="col-12 col-sm-6 col-md-3 mb-4 text-center text-md-start">
             <p className="fw-semibold">Support</p>
-            <a href="/support">Contact</a>
+            <Link to="/support">Contact</Link>
             <br />
-            <a href="/support">Support portal</a>
+            <Link to="/support">Support portal</Link>
             <br />
-            <a href="/pricing">List of charges</a>
+            <Link to="/pricing">List of charges</Link>
           </div>
 
           {/* Account */}

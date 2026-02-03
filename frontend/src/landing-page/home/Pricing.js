@@ -1,31 +1,27 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Pricing() {
   return (
     <div className="container py-5">
       <div className="row align-items-center">
-        {/* LEFT */}
         <div className="col-12 col-md-5 mb-4 mb-md-0">
           <h1 className="mb-3 fs-2">Unbeatable pricing</h1>
           <p>
             We pioneered the concept of discount broking and price transparency
             in India. Flat fees and no hidden charges.
           </p>
-          <a href="/pricing" style={{ textDecoration: "none" }}>
+
+          <Link to="/pricing" style={{ textDecoration: "none" }}>
             See Pricing →
-          </a>
+          </Link>
         </div>
 
-        {/* RIGHT */}
         <div className="col-12 col-md-7">
           <div className="row text-center">
             <div className="col-12 col-sm-6 p-3 border">
               <h1 className="mb-3">₹0</h1>
-              <p>
-                Free equity delivery and
-                <br />
-                direct mutual funds
-              </p>
+              <p>Free equity delivery and direct mutual funds</p>
             </div>
 
             <div className="col-12 col-sm-6 p-3 border">

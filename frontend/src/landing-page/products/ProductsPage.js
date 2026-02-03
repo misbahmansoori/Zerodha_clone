@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import Hero from "./Hero";
 import LeftSection from "./LeftSection";
 import RightSection from "./RightSection";
@@ -42,11 +42,11 @@ function ProductsPage() {
       />
 
       <p className="text-center mt-5 mb-5">
-        Want to know more about our technology stack?{" "}
-        <a href="/not-found" style={{ textDecoration: "none" }}>
-          Visit our tech blog →
-        </a>
-      </p>
+  Want to know more about our technology stack?{" "}
+  <Link to="/not-found" style={{ textDecoration: "none" }}>
+    Visit our tech blog →
+  </Link>
+</p>
 
       <Universe />
     </>

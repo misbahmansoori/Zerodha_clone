@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function NotFound() {
   return (
@@ -6,14 +7,13 @@ function NotFound() {
       <div className="row text-center">
         <h1 className="mt-5">🚧 Feature Coming Soon</h1>
 
-        
-        <a
-          href="/"
+        <Link
+          to="/"
           className="btn btn-outline-primary mt-4"
           style={{ width: "200px", margin: "0 auto" }}
         >
           Back to Home
-        </a>
+        </Link>
       </div>
     </div>
   );

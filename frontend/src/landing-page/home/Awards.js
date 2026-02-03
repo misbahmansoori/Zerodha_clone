@@ -1,10 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Awards() {
   return (
     <div className="container py-4 py-md-5">
       <div className="row align-items-center">
-        {/* LEFT SECTION */}
         <div className="col-12 col-md-6 px-3 px-md-4">
           <h1 className="fs-2 fw-bold mb-4">Learn with Confidence</h1>
 
@@ -33,7 +33,6 @@ function Awards() {
           </p>
         </div>
 
-        {/* RIGHT SECTION */}
         <div className="col-12 col-md-6 text-center mt-4 mt-md-0">
           <img
             src="/media/images/ecosystem.png"
@@ -43,12 +42,9 @@ function Awards() {
           />
 
           <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">
-            <a
-              href="/product"
-              style={{ textDecoration: "none", fontWeight: 500 }}
-            >
+            <Link to="/product" style={{ textDecoration: "none", fontWeight: 500 }}>
               Explore features →
-            </a>
+            </Link>
 
             <a
               href="https://zerodha-clone-dusky-beta.vercel.app"

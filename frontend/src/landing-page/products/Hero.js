@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -12,9 +13,9 @@ function Hero() {
 
         <p className="mt-3 mb-4">
           Check out our{" "}
-          <a href="/product" style={{ textDecoration: "none" }}>
+          <Link to="/product" style={{ textDecoration: "none" }}>
             investment offerings →
-          </a>
+          </Link>
         </p>
       </div>
     </div>

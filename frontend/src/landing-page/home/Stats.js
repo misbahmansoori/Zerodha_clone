@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Stats() {
   return (
     <div className="container">
       <div className="row py-4 py-md-5 mt-5 text-center border-top">
         <div className="col-12 col-md-8 p-3 p-md-4 text-start">
-          <a href="/pricing" style={{ textDecoration: "none" }}>
+          <Link to="/pricing" style={{ textDecoration: "none" }}>
             <h3 className="fs-5">Brokerage calculator</h3>
-          </a>
+          </Link>
 
           <ul style={{ lineHeight: "2.2", fontSize: "13px" }}>
             <li>Call & Trade: ₹50 + GST per order</li>
@@ -20,9 +21,9 @@ function Stats() {
         </div>
 
         <div className="col-12 col-md-4 p-3 p-md-4 text-start text-md-center">
-          <a href="/pricing" style={{ textDecoration: "none" }}>
+          <Link to="/pricing" style={{ textDecoration: "none" }}>
             <h3 className="fs-5">List of charges</h3>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

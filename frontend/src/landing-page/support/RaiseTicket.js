@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 
 function RaiseTicket() {
   return (
@@ -9,7 +9,6 @@ function RaiseTicket() {
           Choose a topic to get help or guidance
         </h1>
 
-        {/* Card 1 */}
         <div className="col-md-4 mb-4">
           <div className="ticket-card">
             <h4 className="ticket-title">
@@ -17,15 +16,14 @@ function RaiseTicket() {
             </h4>
 
             <div className="ticket-links">
-              <a href="/support">How demo portfolios work</a>
-              <a href="/support">Understanding virtual funds</a>
-              <a href="/support">First steps for beginners</a>
-              <a href="/support">Navigating the platform</a>
+              <Link to="/support">How demo portfolios work</Link>
+              <Link to="/support">Understanding virtual funds</Link>
+              <Link to="/support">First steps for beginners</Link>
+              <Link to="/support">Navigating the platform</Link>
             </div>
           </div>
         </div>
 
-        {/* Card 2 */}
         <div className="col-md-4 mb-4">
           <div className="ticket-card">
             <h4 className="ticket-title">
@@ -33,15 +31,14 @@ function RaiseTicket() {
             </h4>
 
             <div className="ticket-links">
-              <a href="/support">Placing simulated trades</a>
-              <a href="/support">Understanding outcomes</a>
-              <a href="/support">Testing ideas safely</a>
-              <a href="/support">Common mistakes to avoid</a>
+              <Link to="/support">Placing simulated trades</Link>
+              <Link to="/support">Understanding outcomes</Link>
+              <Link to="/support">Testing ideas safely</Link>
+              <Link to="/support">Common mistakes to avoid</Link>
             </div>
           </div>
         </div>
 
-        {/* Card 3 */}
         <div className="col-md-4 mb-4">
           <div className="ticket-card">
             <h4 className="ticket-title">
@@ -49,14 +46,13 @@ function RaiseTicket() {
             </h4>
 
             <div className="ticket-links">
-              <a href="/support">Learning resources overview</a>
-              <a href="/support">Concept explanations</a>
-              <a href="/support">Share feedback or suggestions</a>
-              <a href="/support">Report an issue</a>
+              <Link to="/support">Learning resources overview</Link>
+              <Link to="/support">Concept explanations</Link>
+              <Link to="/support">Share feedback or suggestions</Link>
+              <Link to="/support">Report an issue</Link>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );

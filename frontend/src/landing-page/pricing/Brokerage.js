@@ -1,10 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Brokerage() {
   return (
     <div className="container">
       <div className="row py-4 py-md-5 mt-5 border-top align-items-start">
-        {/* LEFT */}
         <div className="col-12 col-md-8 mb-4 mb-md-0">
           <h3 className="fs-6 fw-semibold text-center mb-4">
             What You Can Do on the Platform
@@ -20,16 +20,15 @@ function Brokerage() {
           </ul>
 
           <div className="text-center mt-4">
-            <a
-              href="/project-scope"
+            <Link
+              to="/project-scope"
               style={{ textDecoration: "none", fontWeight: 500 }}
             >
               Learn more about platform features →
-            </a>
+            </Link>
           </div>
         </div>
 
-        {/* RIGHT */}
         <div className="col-12 col-md-4 text-center">
           <img
             src="/media/images/featuresOverview.jpg"
