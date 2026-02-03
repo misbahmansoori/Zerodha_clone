@@ -7,7 +7,7 @@ function Hero() {
       {/* Top bar */}
       <div className="py-4" id="supportWrapper">
         <h4 className="mb-0 fw-semibold">Help & Support</h4>
-        <a href="" className="fw-medium">
+        <a href="https://zerodha-clone-dusky-beta.vercel.app/support" className="fw-medium">
           View past questions
         </a>
       </div>
@@ -26,10 +26,10 @@ function Hero() {
             />
 
             <div className="support-links">
-              <a href="">Getting started</a>
-              <a href="">Using the simulator</a>
-              <a href="">Understanding portfolios</a>
-              <a href="">Learning resources</a>
+              <a href="/support">Getting started</a>
+              <a href="/support">Using the simulator</a>
+              <a href="/support">Understanding portfolios</a>
+              <a href="/support">Learning resources</a>
             </div>
           </div>
 
@@ -37,10 +37,10 @@ function Hero() {
             <h2 className="fs-5 fw-semibold mb-3">Popular topics</h2>
             <ol className="featured-list">
               <li>
-                <a href="">How demo portfolios are designed</a>
+                <a href="/support">How demo portfolios are designed</a>
               </li>
               <li>
-                <a href="">Common beginner mistakes to avoid</a>
+                <a href="/support">Common beginner mistakes to avoid</a>
               </li>
             </ol>
           </div>

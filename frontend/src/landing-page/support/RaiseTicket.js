@@ -17,10 +17,10 @@ function RaiseTicket() {
             </h4>
 
             <div className="ticket-links">
-              <a href="">How demo portfolios work</a>
-              <a href="">Understanding virtual funds</a>
-              <a href="">First steps for beginners</a>
-              <a href="">Navigating the platform</a>
+              <a href="/support">How demo portfolios work</a>
+              <a href="/support">Understanding virtual funds</a>
+              <a href="/support">First steps for beginners</a>
+              <a href="/support">Navigating the platform</a>
             </div>
           </div>
         </div>
@@ -33,10 +33,10 @@ function RaiseTicket() {
             </h4>
 
             <div className="ticket-links">
-              <a href="">Placing simulated trades</a>
-              <a href="">Understanding outcomes</a>
-              <a href="">Testing ideas safely</a>
-              <a href="">Common mistakes to avoid</a>
+              <a href="/support">Placing simulated trades</a>
+              <a href="/support">Understanding outcomes</a>
+              <a href="/support">Testing ideas safely</a>
+              <a href="/support">Common mistakes to avoid</a>
             </div>
           </div>
         </div>
@@ -49,10 +49,10 @@ function RaiseTicket() {
             </h4>
 
             <div className="ticket-links">
-              <a href="">Learning resources overview</a>
-              <a href="">Concept explanations</a>
-              <a href="">Share feedback or suggestions</a>
-              <a href="">Report an issue</a>
+              <a href="/support">Learning resources overview</a>
+              <a href="/support">Concept explanations</a>
+              <a href="/support">Share feedback or suggestions</a>
+              <a href="/support">Report an issue</a>
             </div>
           </div>
         </div>
